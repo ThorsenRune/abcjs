@@ -1,0 +1,83 @@
+html {
+	box-sizing: border-box;
+		
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+	height: 99vh;
+	width :99vw;
+	border: 1px solid  violet;
+	padding: 10px;
+	font-size: 20px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	overflow:hidden;
+}
+#idEditArea {   /*Container for the editor area ABC Notation and score here */
+	height: 100% ;
+     position: relative;
+	overflow:none;
+}
+/*			MAKE SELECTIONS SAME STYLE AS THE NOTE SELECTION (RED)*/
+::-moz-selection {	
+   color: white;
+   background: red;
+   text-shadow: none;
+}
+#abc::selection {
+   color: white;
+   background: red;
+   text-shadow: none;
+}
+#warnings {
+	z-index: 10;/*		ERR MESSAGES IN ABC COMPILATION */
+    background: white;
+    position: absolute;
+    border: 2px solid red;
+}
+#top-component {
+ 
+	margin-bottom: 5px;
+	min-height: 2em;
+}
+
+#bottom-component {
+	min-height: 2em;
+	overflow:unset;
+}
+
+#abccontainer {/*For the ABC textbox */
+	float: none;
+	height:100%;
+	width:100%;
+	padding:0;
+	overflow:hidden;
+}
+#menubutton {
+	float:left;
+
+}
+* {
+    box-sizing: border-box;
+}
+
+#canvascontainer {/* score here */
+	position:relative;	/*put after control */
+	bottom:	0%;/*  Align it from bottom and up*/
+	border:  blue;
+	float: none;
+	overflow:scroll;
+/*	background:white;
+/*	float: right;*/
+	height:100%; 
+	width:100%;/**/
+}
+#svgcontainer{	/*	holding the canvas with the SVG		*/
+	height:100%;	
+	border: 5px solid  purple;
+ 
+}
+ 

@@ -1,0 +1,181 @@
+ @media print {
+ 		html, * {
+			border:none;
+			box-sizing: border-box;
+		}
+		*, *:before, *:after {
+			box-sizing: inherit;
+		}
+
+		body {
+			border:none;
+			background-color: #f1f4f4;
+			margin: 0;
+			font-size: 20px;
+			font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		}
+		body, #idEditArea, #canvas, #canvascontainer, split-pane {
+			  border:none;
+			  overflow:hidden;
+			  height:auto;
+		}
+ 		#idEditArea>div:not(:last-child),   #controls{
+			 visibility: hidden;
+			 display:none;
+			 overflow:hidden;
+			
+		}
+		#canvascontainer  {
+			top:0px; 
+			height: 100%;
+			visibility :visible;
+			position:fixed;
+			overflow:hidden;
+		}
+
+ 
+		header, footer {
+			background: #a9e4f7; /* Old browsers */
+			background: -moz-linear-gradient(left, #a9e4f7 0%, #0fb4e7 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left, #a9e4f7 0%, #0fb4e7 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, #a9e4f7 0%, #0fb4e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a9e4f7', endColorstr='#0fb4e7', GradientType=1); /* IE6-9 */
+		}
+		header {
+			display: flex;
+		}
+
+		header h1 {
+			margin: 0;
+			 
+			color: #333; 
+		}
+
+		.logo-wrapper {
+			width: 90px;
+			height: 67px;
+			display: flex;
+			align-items: center;
+			padding-top: 14px;
+		}
+
+		main {
+			margin: 10px 5px 0 5px;
+		}
+
+		.instructions {
+			list-style: none;
+			padding: 0;
+		}
+
+		.svg-inline--fa {
+			opacity: .8;
+		}
+
+		.instructions .svg-inline--fa {
+			opacity: .6;
+		}
+
+		.input {
+			margin-bottom: 30px;
+		}
+
+		.download {
+			margin-top: 30px;
+		}
+
+ 
+
+		.download a:hover {
+			text-decoration: underline;
+			background-color: #0a9ecc;
+		}
+
+		.muted {
+			color: #0fb4e7;
+			text-decoration: none;
+		}
+		.muted:hover {
+			text-decoration: underline;
+		}
+
+ 
+ 
+ 
+
+		#warnings:empty {
+			display: none;
+		}
+
+		.output {
+			position: relative;
+		}
+
+		nav {
+			position: absolute;
+			right: 10px;
+			top: 5px;
+			z-index: 200;
+		}
+
+ 
+
+		nav button:hover {
+			text-decoration: underline;
+			background-color: #0a9ecc;
+		}
+
+		footer {
+			padding: 1px 0;
+			margin-top: 20px;
+			line-height: 30px;
+		}
+		footer ul {
+			list-style: none;
+			padding: 5px;
+		}
+
+		footer a {
+			color: black;
+			text-decoration: none;
+			background-color: #F3ECE2;
+			padding: 1px 10px;
+	 
+			box-shadow: 2px 2px 0px #aaa;
+		}
+		footer a:hover {
+			text-decoration: underline;
+		}
+
+		@media screen and (min-width: 361px) {
+			header h1 {
+ 
+			}
+			.logo-wrapper {
+				height: 74px;
+			}
+		}
+
+		@media screen and (min-width: 550px) {
+			main {
+				margin: 10px 30px 0 30px;
+			}
+			header, footer {
+				padding-left: 30px;
+			}
+			header h1 {
+				 
+			}
+			.logo-wrapper {
+				height: 98px;
+			}
+			.instructions {
+				padding-left: 20px;
+			}
+		}
+
+ 
+}
+ 
+}
+ 

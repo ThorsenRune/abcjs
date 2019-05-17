@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Modification of ABC Midi Editor Demo to create a ABC writing environment-->
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" 	content="width=device-width, initial-scale=1">
+	<link rel="icon" 		href="../css/favicon.ico" type="image/x-icon"/>
+	<title>ABCJS RT Ver</title>
+		<!-- splitpane.js setup -->
+		<script src="./js/jquery.min.js"></script>
+		<script src="./splitpanel_rt/splitview.js"></script>
+		<link   href="./splitpanel_rt/splitview.css" rel="stylesheet"/>
+		<!--END  splitpane.js setup -->
+	<!--ABCJS fonts -->
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" class='clsStyle'>
+	<link rel="stylesheet" type="text/css" href="../css/abcjs-midi.css" class='clsStyle'>
+	<link rel="stylesheet" type="text/css" href="../css/popup.css" class='clsStyle'	>	
+	<!--todo: remove:  vertical layout override (can be disabled to toggle orientation)
+	<link rel="stylesheet" type="text/css" href="../css/vert.css" class='clsStyle'>-->
+	<!-- The ABCJS plugin for playing MIDI  -->
+	<script src="../bin/abcjs_midi_5.6.9-min.js" type="text/javascript"></script>
+	<!-- The original ABCJS binaries for editing ABC notation  -->
+	<!--<script src="../src/plugin/abc_plugin_midi.js" type="module">	</script> -->
+	<!-- unpacked source file with revisions -->
+	<script src="../src/edit/abc_editor.js" type="module"></script> 
+	<!--  GUI functions -->
+	<script src="./js/edit_mod_190516.js" type="text/javascript" id="idhacks"></script>
+	<link rel="stylesheet" type="text/css" href="./css/editor.css" >	<!-- CSS regarding the editor layout -->
+	<link rel="stylesheet" type="text/css" href="./css/print.css" class='clsStyle'	>
+	<!-- 190502 Inserted a  menu	-->
+</head>
+<body>
+	<div id='idMenu' class="idPopUp">
+		<span class="idPopUpContainer"></span>
+		<div >
+			<div class="popupCloseButton">X</div>
+			<button id="idBtnPlay" onclick="mPlayPause(ABCGUI.kReplayStep)"			>RePlay  </button>
+			<span  class='right' > 
+				
+			</span>
+			<hr>
+			<button onclick="mToggleMute();"		>Toggle muting selection</button><hr>
+			<button onclick="mGetSong('abcSong1')"	>Tune 1</button>
+			<button onclick="mGetSong('abcSong2')"	>Tune 2</button>
+			<button onclick="mGetSong('abcSong3')"	>Tune 3</button>
+			<button onclick="mGetSong('abcSong4')"	>Tune 4</button>
+			<button onclick="mGetSong('abcSong5')"	>Tune 5</button>
+			<button onclick="mLayoutToggle();"		>Orientation Toggle</button>
+			<button onclick="mTextZoom();"			>Zoom text</button>
+			<button onclick="mCanvasZoom();"		>Zoom canvas</button>
+			
+		</div>
+	</div>
+
+	<div id="idEditArea" >
+	 
+	<div class="split-pane-component" id="top-component">
+		<div id="abccontainer" class="fill11"  class="paper11" class="canvas11"   <!--see ID5RBVI   -->
+				<textarea id="abc" title="ABC notation" >
+				</textarea>
+					
+		</div>
+	</div> 
+	<div id='idThumb' class="rangesliderthumb"></div> <!-- Thumb for dragging panes must be between the two panels-->
+	<div class="split-pane-component" id="idScore">
+		<div id="controls">
+			<div id="warnings">warnings</div><!-- ABC Warnings are shown here   -->
+			<button id='menubutton' onclick="mMenuShow()">Menu</button><div id="midi" class="abcjs"></div> 
+			<div id="download"></div>
+		</div>
+		<div id="canvascontainer">   <!-- scrolling the canvas   -->
+			<div id="idCanvasZoom"> 			<!-- zooming the canvas   -->
+				<div id="canvas" > </div> <!-- Where the notes are drawn   -->
+			</div>
+		<div>
+ 
+	</div>
+
+
+
+	</div> <!-- Edit editor area   -->
+</body>
+	<script>
+		$(function() {
+	  			$('div.split-pane').splitPane(); //it must have class: split-pane
+		});
+		 setTimeout(function(){
+			ABCJS=ABCJS1;	//Substitute with un minificed version for debugging
+			mLoad();
+			mLayoutToggle=m.mSwapOrientation ;	//Install the orientation swapper
+
+		 },1000);
+	</script>
+</html>
