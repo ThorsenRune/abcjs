@@ -8,7 +8,7 @@ Forked from [Paul Rosen](https://github.com/paulrosen/abcjs)
 
 ABC notation is a standard for writing musical scores.
 
-![](https://lh5.googleusercontent.com/D55bT9E7XtPPDWCbpt7OHWXHeTfTxxe41ZMePCyHvncXomTRehEQ4ggk5JuylieTWGig3tvTzF88gKQDoHAUd-K7qTRi_Jp5Az3Nkpq3YHrHkm7dY9CwnXFCARIMmVHePzFtb2GL)
+![](https://lh5.googleusercontent.com/D55bT9E7XtPPDWCbpt7OHWXHeTfTxxe41ZMePCyHvncXomTRehEQ4ggk5JuylieTWGig3tvTzF88gKQDoHAUd-K7qTRi_Jp5Az3Nkpq3YHrHkm7dY9CwnXFCARIMmVHePzFtb2GL|width=100)
 
 This fork of ABCJS
 
