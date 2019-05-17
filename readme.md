@@ -67,7 +67,7 @@ Focus has been on making it work on mobile (tablet, phone as well as pc)
 	ABCCodes.natural  =  '=♮';  //♮
 
 
-Sourcecode: https://github.com/ThorsenRune/abcjs
+Sourcecode: [https://github.com/ThorsenRune/abcjs](https://github.com/ThorsenRune/abcjs)
   
   
 
