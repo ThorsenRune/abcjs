@@ -1,0 +1,74 @@
+/* Popup box BEGIN */
+.idPopUp{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    //text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+ 
+.idPopUp .idPopUpContainer{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.idPopUp > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.idPopUp button {
+	//width: 100%;
+	text-align: left;
+ 
+}
+.right {
+	float:right;
+}
+.idPopUp span {
+	//width: 100%;
+ //  width: calc(100% / 2);
+	 
+	text-align: center;
+}
+.popupCloseButton {  /*Places an x to th right left*/
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+     text-align: center; 
+}
+
+ 
+ 
+.trigger_popup  {
+	color:red;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+ 
+/* Popup box END */
