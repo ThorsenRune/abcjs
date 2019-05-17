@@ -14,17 +14,31 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+//	Hack to implement alternative symbols
+var ABCCodes={}	;				//	Some alternative symbols for accidentals
+	ABCCodes.sharp	=	'#♯';	//♯
+	ABCCodes.flat 	=	'j♭';	//♭
+	ABCCodes.natural =	'=♮';	//♮
+
+
 /*global window */
+//var parseCommon = require('./abc_common'); 
+import { parseCommon } from './abc_common.js';
+//var parseDirective = require('./abc_parse_directive'); 
+import { parseDirective } from './abc_parse_directive.js';
+//var ParseHeader = require('./abc_parse_header'); 
+import { ParseHeader } from './abc_parse_header.js';
+//var parseKeyVoice = require('./abc_parse_key_voice'); 
+import { parseKeyVoice } from './abc_parse_key_voice.js';
+//var Tokenizer = require('./abc_tokenizer'); 
+import { Tokenizer } from './abc_tokenizer.js';
+//var transpose = require('./abc_transpose'); 
+import { transpose } from './abc_transpose.js';
+//var wrap = require('./wrap_lines'); 
+import { wrap } from './wrap_lines.js';
 
-var parseCommon = require('./abc_common');
-var parseDirective = require('./abc_parse_directive');
-var ParseHeader = require('./abc_parse_header');
-var parseKeyVoice = require('./abc_parse_key_voice');
-var Tokenizer = require('./abc_tokenizer');
-var transpose = require('./abc_transpose');
-var wrap = require('./wrap_lines');
-
-var Tune = require('../data/abc_tune');
+//var Tune = require('../data/abc_tune'); 
+import { Tune } from '../data/abc_tune.js';
 
 var Parse = function() {
 	"use strict";
@@ -653,18 +667,23 @@ var Parse = function() {
 						if (el.endSlur === undefined) el.endSlur = 1; else el.endSlur++;
 					} else return null;
 					break;
+				case ABCCodes.sharp[0]:   //RT Allow alternative as sharp
+				case ABCCodes.sharp[1]:   //RT  
 				case '^':
 					if (state === 'startSlur') {el.accidental = 'sharp';state = 'sharp2';}
 					else if (state === 'sharp2') {el.accidental = 'dblsharp';state = 'pitch';}
 					else if (isComplete(state)) {el.endChar = index;return el;}
 					else return null;
 					break;
+				case ABCCodes.flat[0]:   //RT Allow alternative flat symbols	
+				case ABCCodes.flat[1]:   //RT Allow alternative flat symbols
 				case '_':
 					if (state === 'startSlur') {el.accidental = 'flat';state = 'flat2';}
 					else if (state === 'flat2') {el.accidental = 'dblflat';state = 'pitch';}
 					else if (isComplete(state)) {el.endChar = index;return el;}
 					else return null;
 					break;
+				case ABCCodes.natural[1]:	//RT Allow alternative natural symbols
 				case '=':
 					if (state === 'startSlur') {el.accidental = 'natural';state = 'pitch';}
 					else if (isComplete(state)) {el.endChar = index;return el;}
@@ -1691,4 +1710,5 @@ var Parse = function() {
 	};
 };
 
-module.exports = Parse;
+//module.exports = Parse;
+export  {Parse};

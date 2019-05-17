@@ -14,9 +14,12 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var AbsoluteElement = require('./abc_absolute_element');
-var glyphs = require('./abc_glyphs');
-var RelativeElement = require('./abc_relative_element');
+//var AbsoluteElement = require('./abc_absolute_element'); 
+import { AbsoluteElement } from './abc_absolute_element.js';
+//var glyphs = require('./abc_glyphs'); 
+import { glyphs } from './abc_glyphs.js';
+//var RelativeElement = require('./abc_relative_element'); 
+import { RelativeElement } from './abc_relative_element.js';
 
 var createClef;
 
@@ -74,4 +77,5 @@ var createClef;
 
 })();
 
-module.exports = createClef;
+//module.exports = createClef;  
+export { createClef }; 

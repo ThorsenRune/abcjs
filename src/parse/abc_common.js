@@ -112,4 +112,5 @@ parseCommon.detect = function(arr, iterator) {
 	});
 })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
-module.exports = parseCommon;
+//module.exports = parseCommon;  
+export { parseCommon }; 

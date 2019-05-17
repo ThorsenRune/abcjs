@@ -197,4 +197,5 @@ var rendererFactory;
 	};
 })();
 
-module.exports = rendererFactory;
+//module.exports = rendererFactory;  
+export { rendererFactory }; 

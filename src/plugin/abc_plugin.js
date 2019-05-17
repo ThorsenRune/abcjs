@@ -18,9 +18,12 @@
 /*global abcjs_is_user_script, abcjs_plugin_autostart */
 "use strict";
 
-var TuneBook = require('../api/abc_tunebook').TuneBook;
-var Parse = require('../parse/abc_parse');
-var EngraverController = require('../write/abc_engraver_controller');
+//var TuneBook = require('../api/abc_tunebook').TuneBook; 
+import { TuneBook } from '../api/abc_tunebook.js';
+//var Parse = require('../parse/abc_parse'); 
+import { Parse } from '../parse/abc_parse.js';
+//var EngraverController = require('../write/abc_engraver_controller'); 
+import { EngraverController } from '../write/abc_engraver_controller.js';
 
 var Plugin = function() {
 	"use strict";
@@ -239,4 +242,5 @@ if (autostart &&
   }
 }
 
-module.exports = plugin;
+//module.exports = plugin;  
+export { plugin }; 

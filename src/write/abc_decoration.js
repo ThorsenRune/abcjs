@@ -16,11 +16,16 @@
 
 /*global window */
 
-var DynamicDecoration = require('./abc_dynamic_decoration');
-var CrescendoElem = require('./abc_crescendo_element');
-var glyphs = require('./abc_glyphs');
-var RelativeElement = require('./abc_relative_element');
-var TieElem = require('./abc_tie_element');
+//var DynamicDecoration = require('./abc_dynamic_decoration'); 
+import { DynamicDecoration } from './abc_dynamic_decoration.js';
+//var CrescendoElem = require('./abc_crescendo_element'); 
+import { CrescendoElem } from './abc_crescendo_element.js';
+//var glyphs = require('./abc_glyphs'); 
+import { glyphs } from './abc_glyphs.js';
+//var RelativeElement = require('./abc_relative_element'); 
+import { RelativeElement } from './abc_relative_element.js';
+//var TieElem = require('./abc_tie_element'); 
+import { TieElem } from './abc_tie_element.js';
 
 var Decoration;
 
@@ -348,4 +353,5 @@ var Decoration;
 
 })();
 
-module.exports = Decoration;
+//module.exports = Decoration;  
+export { Decoration }; 

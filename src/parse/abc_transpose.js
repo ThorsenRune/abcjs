@@ -203,4 +203,5 @@ transpose.note = function(multilineVars, el) {
 
 };
 
-module.exports = transpose;
+//module.exports = transpose;  
+export { transpose }; 

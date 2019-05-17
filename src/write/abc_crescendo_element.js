@@ -14,7 +14,8 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var sprintf = require('./sprintf');
+//var sprintf = require('./sprintf'); 
+import { sprintf } from './sprintf.js';
 
 var CrescendoElem = function CrescendoElem(anchor1, anchor2, dir, positioning) {
 	this.anchor1 = anchor1; // must have a .x and a .parent property or be null (means starts at the "beginning" of the line - after keysig)
@@ -57,4 +58,5 @@ CrescendoElem.prototype.drawLine = function (renderer, y1, y2) {
 	renderer.printPath({path:pathString, stroke:"#000000", 'class': renderer.addClasses('decoration')});
 };
 
-module.exports = CrescendoElem;
+//module.exports = CrescendoElem;  
+export { CrescendoElem }; 

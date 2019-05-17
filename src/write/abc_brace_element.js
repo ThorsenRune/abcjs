@@ -41,4 +41,5 @@ BraceElem.prototype.draw = function (renderer, top, bottom) {
 
 };
 
-module.exports = BraceElem;
+//module.exports = BraceElem;  
+export { BraceElem }; 

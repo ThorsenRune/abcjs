@@ -236,4 +236,5 @@ function createSvg() {
 }
 
 
-module.exports = Svg;
+//module.exports = Svg;  
+export { Svg }; 

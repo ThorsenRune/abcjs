@@ -14,7 +14,8 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var parseCommon = require('./abc_common');
+//var parseCommon = require('./abc_common'); 
+import { parseCommon } from './abc_common.js';
 
 // this is a series of functions that get a particular element out of the passed stream.
 // the return is the number of characters consumed, so 0 means that the element wasn't found.
@@ -752,4 +753,5 @@ var Tokenizer = function() {
 	};
 };
 
-module.exports = Tokenizer;
+//module.exports = Tokenizer;  
+export { Tokenizer }; 

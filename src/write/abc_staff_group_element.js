@@ -16,7 +16,8 @@
 
 /*globals console */
 
-var spacing = require('./abc_spacing');
+//var spacing = require('./abc_spacing'); 
+import { spacing } from './abc_spacing.js';
 
 // StaffGroupElement contains all the elements that go together to make one line of music.
 // That might be multiple staves that are tied together, and it might be multiple voices on one staff.
@@ -432,4 +433,5 @@ StaffGroupElement.prototype.draw = function (renderer) {
 	renderer.y = startY;
 };
 
-module.exports = StaffGroupElement;
+//module.exports = StaffGroupElement;  
+export { StaffGroupElement }; 

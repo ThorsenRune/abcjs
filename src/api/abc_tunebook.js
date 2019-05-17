@@ -17,8 +17,10 @@
 /*global document */
 /*global window, ABCJS, console */
 
-var parseCommon = require('../parse/abc_common');
-var Parse = require('../parse/abc_parse');
+//var parseCommon = require('../parse/abc_common'); 
+import { parseCommon } from '../parse/abc_common.js';
+//var Parse = require('../parse/abc_parse'); 
+import { Parse } from '../parse/abc_parse.js';
 
 var tunebook = {};
 
@@ -307,5 +309,7 @@ var tunebook = {};
 		return tunes;
 	};
 })();
-
-module.exports = tunebook;
+//module.exports = tunebook;
+window.tunebook=tunebook;
+ export { tunebook }; 
+ 

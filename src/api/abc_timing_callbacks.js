@@ -171,5 +171,7 @@ function getLineEndTimings(timings, anticipation) {
 	return callbackTimes;
 }
 
-module.exports = TimingCallbacks;
+//module.exports = TimingCallbacks;
 
+  
+ export { TimingCallbacks }; 

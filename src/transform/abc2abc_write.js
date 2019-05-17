@@ -396,4 +396,5 @@ TextPrinter.prototype.multiplyString = function (s, n) {
     return ret;
 };
 
-module.exports = TextPrinter;
+//module.exports = TextPrinter;  
+export { TextPrinter }; 

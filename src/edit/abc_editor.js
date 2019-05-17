@@ -28,11 +28,17 @@
 
 /*global document, window, clearTimeout, setTimeout */
 
-var TuneBook = require('../api/abc_tunebook').TuneBook;
-var parseCommon = require('../parse/abc_common');
-var Parse = require('../parse/abc_parse');
-var TextPrinter = require('../transform/abc2abc_write');
-var EngraverController = require('../write/abc_engraver_controller');
+//var TuneBook = require('../api/abc_tunebook').TuneBook; 
+import { tunebook } from '../api/abc_tunebook.js';
+var TuneBook=tunebook.TuneBook;
+//var parseCommon = require('../parse/abc_common'); 
+import { parseCommon } from '../parse/abc_common.js';
+//var Parse = require('../parse/abc_parse'); 
+import { Parse } from '../parse/abc_parse.js';
+//var TextPrinter = require('../transform/abc2abc_write'); 
+import { TextPrinter } from '../transform/abc2abc_write.js';
+//var EngraverController = require('../write/abc_engraver_controller'); 
+import { EngraverController } from '../write/abc_engraver_controller.js';
 
 // Polyfill for CustomEvent for old IE versions
 if ( typeof window.CustomEvent !== "function" ) {
@@ -479,4 +485,8 @@ Editor.prototype.pauseMidi = function(shouldPause) {
 		this.redrawMidi();
 };
 
-module.exports = Editor;
+//module.exports = Editor;
+
+window.ABCJS1={};
+window.ABCJS1.Editor=  Editor;
+export {Editor};

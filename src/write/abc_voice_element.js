@@ -14,7 +14,8 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var parseCommon = require('../parse/abc_common');
+//var parseCommon = require('../parse/abc_common'); 
+import { parseCommon } from '../parse/abc_common.js';
 
 var VoiceElement = function VoiceElement(voicenumber, voicetotal) {
 	this.children = [];
@@ -296,4 +297,5 @@ VoiceElement.prototype.layoutBeams = function() {
 	this.staff.bottom = Math.min(this.staff.bottom, this.bottom);
 };
 
-module.exports = VoiceElement;
+//module.exports = VoiceElement;  
+export { VoiceElement }; 

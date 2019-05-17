@@ -14,7 +14,8 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var sprintf = require('./sprintf');
+//var sprintf = require('./sprintf'); 
+import { sprintf } from './sprintf.js';
 
 var EndingElem = function EndingElem(text, anchor1, anchor2) {
 	this.text = text; // text to be displayed top left
@@ -55,4 +56,5 @@ EndingElem.prototype.draw = function (renderer, linestartx, lineendx) {
 	renderer.printPath({path:pathString, stroke:"#000000", fill:"#000000", 'class': renderer.addClasses('ending')});
 };
 
-module.exports = EndingElem;
+//module.exports = EndingElem;  
+export { EndingElem }; 

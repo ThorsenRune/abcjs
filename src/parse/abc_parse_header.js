@@ -16,9 +16,12 @@
 
 /*global window */
 
-var parseCommon = require('./abc_common');
-var parseDirective = require('./abc_parse_directive');
-var parseKeyVoice = require('./abc_parse_key_voice');
+//var parseCommon = require('./abc_common'); 
+import { parseCommon } from './abc_common.js';
+//var parseDirective = require('./abc_parse_directive'); 
+import { parseDirective } from './abc_parse_directive.js';
+//var parseKeyVoice = require('./abc_parse_key_voice'); 
+import { parseKeyVoice } from './abc_parse_key_voice.js';
 
 var ParseHeader = function(tokenizer, warn, multilineVars, tune) {
 	this.reset = function(tokenizer, warn, multilineVars, tune) {
@@ -551,6 +554,7 @@ var ParseHeader = function(tokenizer, warn, multilineVars, tune) {
 							this.setTitle(line.substring(2));
 							break;
 						case 'U':
+						//	warn("Macros are not supported", line, 0);
 							this.addUserDefinition(line, 2, line.length);
 							break;
 						case  'V':
@@ -566,7 +570,7 @@ var ParseHeader = function(tokenizer, warn, multilineVars, tune) {
 							break;
 						case 'E':
 						case 'm':
-							warn("Ignored header", line, 0);
+							warn("Macros are not supported", line, 0);
 							break;
 						default:
 							// It wasn't a recognized header value, so parse it as music.
@@ -588,4 +592,5 @@ var ParseHeader = function(tokenizer, warn, multilineVars, tune) {
 	};
 };
 
-module.exports = ParseHeader;
+//module.exports = ParseHeader;  
+export { ParseHeader }; 

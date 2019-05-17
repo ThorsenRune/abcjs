@@ -124,4 +124,5 @@ TieElem.prototype.draw = function (renderer, linestartx, lineendx) {
 
 };
 
-module.exports = TieElem;
+//module.exports = TieElem;  
+export { TieElem }; 

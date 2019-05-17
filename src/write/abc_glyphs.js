@@ -1,4 +1,5 @@
-var spacing = require('./abc_spacing');
+//var spacing = require('./abc_spacing'); 
+import { spacing } from './abc_spacing.js';
 
 /**
  * Glyphs and some methods to adjust for their x and y baseline
@@ -218,4 +219,6 @@ var Glyphs = function() {
     }
   };
 };
-module.exports = new Glyphs(); // we need the glyphs for layout information
+//module.exports = new Glyphs(); // we need the glyphs for layout information  
+var glyphs= new Glyphs();
+export { glyphs}; 

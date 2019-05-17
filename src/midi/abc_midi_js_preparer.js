@@ -240,4 +240,5 @@ var Preparer;
 	};
 })();
 
-module.exports = Preparer;
+//module.exports = Preparer;  
+export { Preparer }; 

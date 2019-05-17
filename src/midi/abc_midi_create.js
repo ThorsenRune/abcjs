@@ -14,10 +14,14 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var flatten = require('./abc_midi_flattener');
-var Preparer = require('./abc_midi_js_preparer');
-var rendererFactory = require('./abc_midi_renderer');
-var sequence = require('./abc_midi_sequencer');
+//var flatten = require('./abc_midi_flattener'); 
+import { flatten } from './abc_midi_flattener.js';
+//var Preparer = require('./abc_midi_js_preparer'); 
+import { Preparer } from './abc_midi_js_preparer.js';
+//var rendererFactory = require('./abc_midi_renderer'); 
+import { rendererFactory } from './abc_midi_renderer.js';
+//var sequence = require('./abc_midi_sequencer'); 
+import { sequence } from './abc_midi_sequencer.js';
 
 var create;
 
@@ -88,4 +92,6 @@ var create;
 	}
 })();
 
-module.exports = create;
+//module.exports = create; 
+var midiCreate=create ;
+export {   midiCreate  }; 

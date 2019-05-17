@@ -882,4 +882,5 @@ var flatten;
 	}
 })();
 
-module.exports = flatten;
+//module.exports = flatten;  
+export { flatten }; 

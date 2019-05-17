@@ -331,4 +331,5 @@ var sequence;
 	}
 })();
 
-module.exports = sequence;
+//module.exports = sequence;  
+export { sequence }; 

@@ -14,8 +14,11 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var midi = require('./abc_midi_controls');
-var midiCreate = require('./abc_midi_create');
+//var midi = require('./abc_midi_controls'); 
+//import { midi } from './abc_midi_controls.js';
+import { midi } from '../../bin/abcjs_midi_5.6.9-min.js"
+//var midiCreate = require('./abc_midi_create'); 
+import { midiCreate } from './abc_midi_create.js';
 var abcMidiUiGenerator;
 
 (function () {
@@ -83,4 +86,5 @@ var abcMidiUiGenerator;
 	});
 })();
 
-module.exports = abcMidiUiGenerator;
+//module.exports = abcMidiUiGenerator;  
+export { abcMidiUiGenerator }; 

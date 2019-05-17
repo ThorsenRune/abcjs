@@ -1,8 +1,13 @@
+/*Module: abc_parse_key_voice.js    */
+
 /*global window */
 
-var parseCommon = require('./abc_common');
-var parseDirective = require('./abc_parse_directive');
-var transpose = require('./abc_transpose');
+//var parseCommon = require('./abc_common'); 
+import { parseCommon } from './abc_common.js';
+//var parseDirective = require('./abc_parse_directive'); 
+import { parseDirective } from './abc_parse_directive.js';
+//var transpose = require('./abc_transpose'); 
+import { transpose } from './abc_transpose.js';
 
 var parseKeyVoice = {};
 
@@ -680,7 +685,7 @@ var parseKeyVoice = {};
 			}
 			start += attr.len;
 		};
-		var addNextNoteTokenToVoiceInfo = function(id, name) {
+		var addNextNoteTokenToVoiceInfo = function(id, name) {  //Visual transposes 
 			var noteToTransposition = {
 				"_B": 2,
 				"_E": 9,
@@ -700,7 +705,7 @@ var parseKeyVoice = {};
 					multilineVars.voices[id][name] = t;
 			}
 			start += attr.len;
-		};
+		}; //End addNextNoteTokenToVoiceInfo
 
 		//Then the following items can occur in any order:
 		while (start < end) {
@@ -901,9 +906,15 @@ var parseKeyVoice = {};
 		if (staffInfo.name) {if (s.name) s.name.push(staffInfo.name); else s.name = [ staffInfo.name ];}
 		if (staffInfo.subname) {if (s.subname) s.subname.push(staffInfo.subname); else s.subname = [ staffInfo.subname ];}
 
+ 	 mFixes_RT(id,staffInfo);	//RT:Bugfixing of transpose
 		setCurrentVoice(id);
-	};
-
+	}; //end parseKeyVoice.parseVoice 
+    var mFixes_RT = function (id,staffInfo){  //Some fixes: Set scoreTranspose=-transpose for anything but perc
+		if (staffInfo.clef)		//Skip if no clef is defined
+		if (staffInfo.clef!='perc')			//Skip drums
+			multilineVars.voices[id].scoreTranspose=-multilineVars.voices[id].transpose;	//RT: Transpose score up as midi goes down
+	}
 })();
 
-module.exports = parseKeyVoice;
+//module.exports = parseKeyVoice;  
+export { parseKeyVoice }; 

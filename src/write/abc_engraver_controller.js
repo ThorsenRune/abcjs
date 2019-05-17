@@ -17,9 +17,12 @@
 
 /*global Math */
 
-var spacing = require('./abc_spacing');
-var AbstractEngraver = require('./abc_abstract_engraver');
-var Renderer = require('./abc_renderer');
+//var spacing = require('./abc_spacing'); 
+import { spacing } from './abc_spacing.js';
+//var AbstractEngraver = require('./abc_abstract_engraver'); 
+import { AbstractEngraver } from './abc_abstract_engraver.js';
+//var Renderer = require('./abc_renderer'); 
+import { Renderer } from './abc_renderer.js';
 
 /**
  * @class
@@ -401,4 +404,5 @@ function centerWholeRests(voices) {
 	}
 }
 
-module.exports = EngraverController;
+//module.exports = EngraverController;  
+export { EngraverController }; 

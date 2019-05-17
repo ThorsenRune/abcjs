@@ -14,7 +14,8 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var sprintf = require('./sprintf');
+//var sprintf = require('./sprintf'); 
+import { sprintf } from './sprintf.js';
 
 var TripletElem;
 
@@ -135,4 +136,5 @@ var TripletElem;
 	}
 })();
 
-module.exports = TripletElem;
+//module.exports = TripletElem;  
+export { TripletElem }; 

@@ -14,9 +14,12 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var AbsoluteElement = require('./abc_absolute_element');
-var RelativeElement = require('./abc_relative_element');
-var spacing = require('./abc_spacing');
+//var AbsoluteElement = require('./abc_absolute_element'); 
+import { AbsoluteElement } from './abc_absolute_element.js';
+//var RelativeElement = require('./abc_relative_element'); 
+import { RelativeElement } from './abc_relative_element.js';
+//var spacing = require('./abc_spacing'); 
+import { spacing } from './abc_spacing.js';
 
 var getDurlog = function(duration) {
         // TODO-PER: This is a hack to prevent a Chrome lockup. Duration should have been defined already,
@@ -335,4 +338,5 @@ var BeamElem;
 	}
 })();
 
-module.exports = BeamElem;
+//module.exports = BeamElem;  
+export { BeamElem }; 

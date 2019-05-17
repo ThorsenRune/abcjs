@@ -17,10 +17,14 @@
 
 /*global Math, console */
 
-var glyphs = require('./abc_glyphs');
-var spacing = require('./abc_spacing');
-var sprintf = require('./sprintf');
-var Svg = require('./svg');
+//var glyphs = require('./abc_glyphs'); 
+import { glyphs } from './abc_glyphs.js';
+//var spacing = require('./abc_spacing'); 
+import { spacing } from './abc_spacing.js';
+//var sprintf = require('./sprintf'); 
+import { sprintf } from './sprintf.js';
+//var Svg = require('./svg'); 
+import { Svg } from './svg.js';
 
 /**
  * Implements the API for rendering ABCJS Abstract Rendering Structure to a canvas/paper (e.g. SVG, Raphael, etc)
@@ -920,4 +924,5 @@ Renderer.prototype.addToRegression = function (el) {
 	this.regressionLines.push(str);
 };
 
-module.exports = Renderer;
+//module.exports = Renderer;  
+export { Renderer }; 

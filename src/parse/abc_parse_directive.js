@@ -1,6 +1,7 @@
 /*global window */
 
-var parseCommon = require('./abc_common');
+//var parseCommon = require('./abc_common'); 
+import { parseCommon } from './abc_common.js';
 
 var parseDirective = {};
 
@@ -1047,4 +1048,5 @@ var parseDirective = {};
 	};
 })();
 
-module.exports = parseDirective;
+//module.exports = parseDirective;  
+export { parseDirective }; 

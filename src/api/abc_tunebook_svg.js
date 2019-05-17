@@ -1,8 +1,12 @@
-var tunebook = require('./abc_tunebook');
+//var tunebook = require('./abc_tunebook'); 
+ import { tunebook } from './abc_tunebook.js';
 
-var EngraverController = require('../write/abc_engraver_controller');
-var Parse = require('../parse/abc_parse');
-var wrap = require('../parse/wrap_lines');
+//var EngraverController = require('../write/abc_engraver_controller'); 
+ import { EngraverController } from '../write/abc_engraver_controller.js';
+//var Parse = require('../parse/abc_parse'); 
+ import { Parse } from '../parse/abc_parse.js';
+//var wrap = require('../parse/wrap_lines'); 
+ import { wrap } from '../parse/wrap_lines.js';
 
 var resizeDivs = {};
 function resizeOuter() {
@@ -216,4 +220,5 @@ function doLineWrapping(div, tune, tuneNumber, abcString, params) {
 	return ret.tune;
 }
 
-module.exports = renderAbc;
+//module.exports = renderAbc;
+export {renderAbc};

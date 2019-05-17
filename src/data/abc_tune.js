@@ -14,9 +14,12 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var parseCommon = require('../parse/abc_common');
-var parseKeyVoice = require('../parse/abc_parse_key_voice');
-var spacing = require('../write/abc_spacing');
+//var parseCommon = require('../parse/abc_common'); 
+import { parseCommon } from '../parse/abc_common.js';
+//var parseKeyVoice = require('../parse/abc_parse_key_voice'); 
+import { parseKeyVoice } from '../parse/abc_parse_key_voice.js';
+//var spacing = require('../write/abc_spacing'); 
+import { spacing } from '../write/abc_spacing.js';
 
 /**
  * This is the data for a single ABC tune. It is created and populated by the window.ABCJS.parse.Parse class.
@@ -1281,4 +1284,6 @@ var Tune = function() {
 	};
 };
 
-module.exports = Tune;
+//module.exports = Tune; 
+export { Tune }; 
+

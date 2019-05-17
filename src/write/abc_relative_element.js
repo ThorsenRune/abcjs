@@ -14,7 +14,8 @@
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var glyphs = require('./abc_glyphs');
+//var glyphs = require('./abc_glyphs'); 
+import { glyphs } from './abc_glyphs.js';
 
 var RelativeElement = function RelativeElement(c, dx, w, pitch, opt) {
 	opt = opt || {};
@@ -163,4 +164,5 @@ RelativeElement.prototype.draw = function (renderer, bartop) {
 	return this.graphelem;
 };
 
-module.exports = RelativeElement;
+//module.exports = RelativeElement;  
+export { RelativeElement }; 

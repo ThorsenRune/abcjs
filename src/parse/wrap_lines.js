@@ -675,4 +675,7 @@ function calcLineWraps(tune, widths, abcString, params, Parse, engraver_controll
 	return ret;
 }
 
-module.exports = { wrapLines: wrapLines, calcLineWraps: calcLineWraps };
+//module.exports = { wrapLines: wrapLines, calcLineWraps: calcLineWraps };
+var wrap ={ wrapLines: wrapLines, calcLineWraps: calcLineWraps };
+export {wrap };
+ 

@@ -698,4 +698,5 @@ var midi = {};
 
 })();
 
-module.exports = midi;
+//module.exports = midi;  
+export { midi }; 

@@ -1,7 +1,11 @@
-var tunebook = require('./abc_tunebook');
+//var tunebook = require('./abc_tunebook'); 
+import { tunebook } from './abc_tunebook.js';
 
-var midi = require('../midi/abc_midi_controls');
-var midiCreate = require('../midi/abc_midi_create');
+//var midi = require('../midi/abc_midi_controls'); 
+import { midi } from '../midi/abc_midi_controls.js';
+
+//var midiCreate = require('../midi/abc_midi_create'); 
+import { midiCreate } from '../midi/abc_midi_create.js';
 
 // A quick way to render a tune from javascript when interactivity is not required.
 // This is used when a javascript routine has some abc text that it wants to render
@@ -97,5 +101,5 @@ var renderMidi = function(output, abc, parserParams, midiParams, renderParams) {
 
     return tunebook.renderEngine(callback, output, abc, params);
 };
-
-module.exports = renderMidi;
+//module.exports = renderMidi;  
+export { renderMidi }; 

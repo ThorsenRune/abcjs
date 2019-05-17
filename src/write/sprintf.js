@@ -62,4 +62,5 @@ var sprintf = function() {
   return o.join('');
 };
 
-module.exports = sprintf;
+//module.exports = sprintf;  
+export { sprintf }; 
