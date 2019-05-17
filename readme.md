@@ -1,7 +1,7 @@
 
 # ABCJS Musical Score Editor and Midi player.
 
-Forked from Paul Rosen [https://github.com/paulrosen/abcjs](https://github.com/paulrosen/abcjs)
+Forked from [Paul Rosen](https://github.com/paulrosen/abcjs)
 
 [Use it online here](https://thorsenrune.github.io/abcjs/app/ABCeditor_190516.html)
 
@@ -67,7 +67,7 @@ Focus has been on making it work on mobile (tablet, phone as well as pc)
 	ABCCodes.natural  =  '=♮';  //♮
 
 
-
+Sourcecode: https://github.com/ThorsenRune/abcjs
   
   
 
@@ -83,6 +83,6 @@ I haven't invested time on aesthetics of the coding, hence many ugly hacks.
 
 Thanks to:
 
-[Paul Rosen]([https://github.com/paulrosen/abcjs](https://github.com/paulrosen/abcjs)) for the ABCJS library
+[Paul Rosen](https://github.com/paulrosen/abcjs)) for the ABCJS library
 
-[Simon Hagström]([https://github.com/shagstrom/split-pane](https://github.com/shagstrom/split-pane)) inspiring the panel resizing
+[Simon Hagström](https://github.com/shagstrom/split-pane) inspiring the panel resizing
