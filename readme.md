@@ -83,6 +83,6 @@ I haven't invested time on aesthetics of the coding, hence many ugly hacks.
 
 Thanks to:
 
-[Paul Rosen](https://github.com/paulrosen/abcjs)) for the ABCJS library
+[Paul Rosen](https://github.com/paulrosen/abcjs)  for the ABCJS library
 
 [Simon Hagström](https://github.com/shagstrom/split-pane) inspiring the panel resizing
