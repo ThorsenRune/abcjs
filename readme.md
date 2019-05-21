@@ -69,7 +69,7 @@ Focus has been on making it work on mobile (tablet, phone as well as pc)
 
 Sourcecode: [https://github.com/ThorsenRune/abcjs](https://github.com/ThorsenRune/abcjs)
 
-ZIP Release for offline use: https://github.com/ThorsenRune/abcjs/releases
+[ZIP Release for offline use] (https://github.com/ThorsenRune/abcjs/releases)
   
   
 
