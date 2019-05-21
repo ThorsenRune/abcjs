@@ -1,3 +1,12 @@
+# Version190521
+* Versioning by date
+* several hacks unwrapping JS modules from node
+* hacks (conditioned by ABCJS.RTHacks=true)
+** allow // as comments
+** splitscreen horizontal/vertical organization of ABC code and score
+** allow %%score directive to hide/mute voices 
+** changed transpose directive to do both visual and midi transposition (Useful for Bb and A instrumnets)
+** more (trying to clean up the repository)
 # Version 5.6.11
 
 ## Bugs

@@ -648,4 +648,4 @@ var ParserLint = function() {
 	};
 };
 
-module.exports = ParserLint;
+//module.exports = ParserLint;

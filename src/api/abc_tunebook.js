@@ -64,6 +64,7 @@ var tunebook = {};
 		// Now, the tune ends at a blank line, so truncate it if needed. There may be "intertune" stuff.
 		parseCommon.each(This.tunes, function(tune) {
 			var end = tune.abc.indexOf('\n\n');
+			if (!ABCJS.RTHacks) //I prefer to allow empty lines
 			if (end > 0)
 				tune.abc = tune.abc.substring(0, end);
 			tune.pure = tune.abc;

@@ -2,7 +2,6 @@
 
 //var parseCommon = require('./abc_common'); 
 import { parseCommon } from './abc_common.js';
-
 var parseDirective = {};
 
 (function() {
@@ -767,6 +766,18 @@ var parseDirective = {};
 				if (scratch !== null) return scratch;
 				multilineVars.partsfont.box = multilineVars.partsBox;
 				break;
+			case "barnumber":		//RT 190516   Introducing a start number for the bar numbering. as 'barnumber barnumber [barnumberinterval]'
+				var  err=   " Error: "+cmd +  " barnumber 'startbarnr'   ['Barnumbering interval']    Must be  numbers";
+				if  (tokens.length>2)  return err;
+				if  (tokens.length<1)  return err;
+				if  (tokens.length==2)  {					
+					if (tokens[1].type !== 'number')  return err;
+					multilineVars.barNumbers= tokens[1].intt;
+				}	
+				if (!multilineVars.barNumbers) multilineVars.barNumbers=1;
+			    if  (tokens[0].type !== 'number') return err;
+					multilineVars.currBarNumber=tokens[0].intt;
+			    break;				//End RT 190516 
 			case "measurenb":
 			case "barnumbers":
 				scratch = addMultilineVar('barNumbers', cmd, tokens);
@@ -851,8 +862,21 @@ var parseDirective = {};
 				return getChangingFont("measurefont", tokens, str);
 			case "staves":
 			case "score":
+				if (ABCJS.RTHacks)ABCJS.ActiveVoices=[];	//RT Hack
 				multilineVars.score_is_present = true;
+				//RT: I would belieive this definition should be refactored out and not nested here
 				var addVoice = function(id, newStaff, bracket, brace, continueBar) {
+if (ABCJS.RTHacks)  //RT hack 190516 collect voices  present in the %%STAFF directive
+{
+		if (multilineVars.voices[id]) {//Only collect defined voices
+			var idx=multilineVars.voices[id].staffNum;
+			ABCJS.ActiveVoices.push(idx);//]=name;
+		}else {
+			return 'Undefined voice in:'+str;
+			}
+}
+
+				//Voice is present in staff directive
 					if (newStaff || multilineVars.staves.length === 0) {
 						multilineVars.staves.push({index: multilineVars.staves.length, numVoices: 0});
 					}
@@ -863,9 +887,9 @@ var parseDirective = {};
 					if (multilineVars.voices[id] === undefined) {
 						multilineVars.voices[id] = {staffNum: staff.index, index: staff.numVoices};
 						staff.numVoices++;
-					}
+					}					
 				};
-
+	 
 				var openParen = false;
 				var openBracket = false;
 				var openBrace = false;
@@ -874,7 +898,7 @@ var parseDirective = {};
 				var justOpenBrace = false;
 				var continueBar = false;
 				var lastVoice;
-				var addContinueBar = function() {
+				var addContinueBar = function() {  //Purpose of this?
 					continueBar = true;
 					if (lastVoice) {
 						var ty = 'start';
@@ -928,7 +952,8 @@ var parseDirective = {};
 							var newStaff = !openParen || justOpenParen;
 							var bracket = justOpenBracket ? 'start' : openBracket ? 'continue' : undefined;
 							var brace = justOpenBrace ? 'start' : openBrace ? 'continue' : undefined;
-							addVoice(vc, newStaff, bracket, brace, continueBar);
+							var err=addVoice(vc, newStaff, bracket, brace, continueBar);
+							if (ABCJS.RTHacks) if (err) return err; //Report error 
 							justOpenParen = false;
 							justOpenBracket = false;
 							justOpenBrace = false;

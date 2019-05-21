@@ -137,4 +137,4 @@ var midiSequencerLint = function(tune) {
 	return ret;
 };
 
-module.exports = midiSequencerLint;
+//module.exports = midiSequencerLint;

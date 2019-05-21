@@ -19,8 +19,10 @@ var ABCCodes={}	;				//	Some alternative symbols for accidentals
 	ABCCodes.sharp	=	'#♯';	//♯
 	ABCCodes.flat 	=	'j♭';	//♭
 	ABCCodes.natural =	'=♮';	//♮
+	ABCCodes.comment='//';
 
-
+window.ABCCodes=ABCCodes;
+window.ABCCodes=ABCCodes;
 /*global window */
 //var parseCommon = require('./abc_common'); 
 import { parseCommon } from './abc_common.js';
@@ -285,7 +287,7 @@ var Parse = function() {
 					return (ret[1] === acc);
 				}))
 					return ret;
-				if (parseCommon.detect(volumeDecorations, function(acc) {
+				if (parseCommon.detect(volumeDecorations, function(acc) {  //as now no effect on midi
 						return (ret[1] === acc);
 					})) {
 					if (multilineVars.volumePosition === 'hidden' )
@@ -1101,7 +1103,7 @@ var Parse = function() {
 		// see if there is nothing but a comment on this line. If so, just ignore it. A full line comment is optional white space followed by %
 		while (tokenizer.isWhiteSpace(line.charAt(i)) && i < line.length)
 			i++;
-		if (i === line.length || line.charAt(i) === '%')
+		if (i === line.length || line.charAt(i) === '%')   //We never get here . See RT: revision 190515
 			return;
 
 		// Start with the standard staff, clef and key symbols on each line
@@ -1127,7 +1129,7 @@ var Parse = function() {
 		{
 			var startI = i;
 			if (line.charAt(i) === '%')
-				break;
+				break;   //We never get here . See RT: revision 190515
 
 			var retInlineHeader = header.letter_to_inline_header(line, i);
 			if (retInlineHeader[0] > 0) {

@@ -359,4 +359,4 @@ var verticalLint = function(tunes) {
 	return positioning;
 };
 
-module.exports = verticalLint;
+//module.exports = verticalLint;

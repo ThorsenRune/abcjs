@@ -300,4 +300,4 @@ var JSONSchema = {
 */
 };
 
-module.exports = JSONSchema;
+//module.exports = JSONSchema;

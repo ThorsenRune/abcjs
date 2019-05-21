@@ -171,7 +171,8 @@ function mStatic(bGet)	{
 }
 
 function mLoad(){ 
-	// alert('Hello to ABC Editor 190502');
+	ABCJS.RTHacks=true;	//Enable hacks since brancing
+	
 	ABCElems.abc=document.getElementById('abc')
 	abcEditor=new ABCJS.Editor("abc", 
 	{

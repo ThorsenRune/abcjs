@@ -327,10 +327,28 @@ Editor.prototype.modelChanged = function() {
 
   if (this.bReentry)
     return; // TODO is this likely? maybe, if we rewrite abc immediately w/ abc2abc
+
+
   this.bReentry = true;
   this.timerId = null;
   this.div.innerHTML = "";
   this.engraver_controller = new EngraverController(this.div, this.abcjsParams);
+  
+  if  (ABCJS.RTHacks)// RT190514  Before engraver, will remove voices not present in the %%STAFF directive
+  if (ABCJS.ActiveVoices)	//And the staves directive was present
+  for (var n=0;n<this.tunes[0].lines.length;n++){
+	var visibleStaff=[];	//Holding only visible staffs
+	for (var i=0;i<ABCJS.ActiveVoices.length;i++){
+		var idx=ABCJS.ActiveVoices[i]; 
+		if (this.tunes[0].lines[n].staff[idx]) //Skip undefined voices
+		visibleStaff.push(	this.tunes[0].lines[n].staff[idx]);	
+	}
+	if (visibleStaff.length>0)//Only do reduction if at least one voice is selected
+		this.tunes[0].lines[n].staff=visibleStaff;
+}
+	
+	//end hack RT190514
+  
   this.engraver_controller.engraveABC(this.tunes);
 	this.tunes[0].engraver = this.engraver_controller;	// TODO-PER: We actually want an output object for each tune, not the entire controller. When refactoring, don't save data in the controller.
 	this.redrawMidi();

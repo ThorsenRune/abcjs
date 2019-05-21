@@ -16,7 +16,7 @@
 
 //var midi = require('./abc_midi_controls'); 
 //import { midi } from './abc_midi_controls.js';
-import { midi } from '../../bin/abcjs_midi_5.6.9-min.js"
+import { midi } from '../../bin/abcjs_midi_min.js"
 //var midiCreate = require('./abc_midi_create'); 
 import { midiCreate } from './abc_midi_create.js';
 var abcMidiUiGenerator;

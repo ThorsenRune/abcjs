@@ -47,4 +47,4 @@ var midiLint = function(tune) {
 	return ret;
 };
 
-module.exports = midiLint;
+//module.exports = midiLint;

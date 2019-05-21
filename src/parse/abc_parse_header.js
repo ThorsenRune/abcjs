@@ -13,7 +13,8 @@
 //    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 //    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+//RT: revision 190515
+//			this preprocessor will now treat // as a comment (superseeding the % symbol)
 /*global window */
 
 //var parseCommon = require('./abc_common'); 
@@ -489,9 +490,14 @@ var ParseHeader = function(tokenizer, warn, multilineVars, tune) {
 			if (err) warn(err, line, 2);
 			return {};
 		}
+		//RT: Remove comments
 		var i = line.indexOf('%');
 		if (i >= 0)
 			line = line.substring(0, i);
+		i=line.indexOf(ABCCodes.comment);		//Get the position of the comment
+		if (i >= 0)
+			line = line.substring(0, i);
+
 		line = line.replace(/\s+$/, '');
 
 		if (line.length === 0)

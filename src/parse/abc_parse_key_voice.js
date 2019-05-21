@@ -905,7 +905,7 @@ var parseKeyVoice = {};
 
 		if (staffInfo.name) {if (s.name) s.name.push(staffInfo.name); else s.name = [ staffInfo.name ];}
 		if (staffInfo.subname) {if (s.subname) s.subname.push(staffInfo.subname); else s.subname = [ staffInfo.subname ];}
-
+		if (ABCJS.RTHacks)
  	 mFixes_RT(id,staffInfo);	//RT:Bugfixing of transpose
 		setCurrentVoice(id);
 	}; //end parseKeyVoice.parseVoice 
@@ -913,6 +913,8 @@ var parseKeyVoice = {};
 		if (staffInfo.clef)		//Skip if no clef is defined
 		if (staffInfo.clef!='perc')			//Skip drums
 			multilineVars.voices[id].scoreTranspose=-multilineVars.voices[id].transpose;	//RT: Transpose score up as midi goes down
+		if (staffInfo.clef=='bass-8')
+			multilineVars.voices[id].transpose=multilineVars.voices[id].transpose-24;	//Move midi pitch down 2 octaves for  bass
 	}
 })();
 
